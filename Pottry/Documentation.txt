@@ -1,0 +1,57 @@
+Here's the description of the game.
+
+There are two building blocks(Tetramino/PLayGround) of the game:
+
+1. The TETRAMINO(class)
+   
+   a)This object is used only when we have a moving Tetramino.
+     Once the Tetramino STOPS it's deleted. But before destroying it,
+     we write what part of the playground it occupies and what is the type of
+     it's blocks. All that information goes into PlayGround [][] structure.
+   
+     Example: Tetramino stops at some place.
+	  	for(int i=0;i<4;i++)	//write the 4 blocks into the PG
+			PG[begins_atX+blocks[i].x][begins_atY+blocks[i].y].state=1;
+		//(Thats done in the Tetramino class)
+		
+		//write the current DIrectDraw Surface of the tetramino into the PG[][].surface
+		//(That's also done in the Tetramino object(class))
+     After all the information is written we are free to delete the tetramino object.
+	
+	b)Possible operations are:
+		-move down
+		(may issue a stop command- return 0;)
+		-move left
+		-move right
+	    -rotate
+
+
+2. And the PLAYGROUND(structure)
+	
+   a)This Structure holds all the information for the blocks that have stopped.
+   After the tetramino stops all the needed information is transferred to this
+   structure. 
+   
+   b)The possible operation on this structure are:
+	-delete blocks
+	-move down block
+	(All this is needed when a line is dropped.)
+	
+   c)Drawing the block in the PlayGround
+	 The block in the PG are drawn very simple.
+	 for(every PG[]][].state ==(1))
+			draw(PG[][].lpddSurface)
+
+
+
+3. The Score:
+
+	The score is calculated with the following formula:
+	dwCurrentScore+=(iLinesDeleted*iLinesDeleted*200000)/(GetTickCount()-iLastLineDroppedAt+1)
+	
+	where:
+	-iLinesDeleted are the last deleted lines
+	-iLastLineDroppedAt the interval in milliseconds since a line was dropped
+	
+	Only the three top scores are saved.
+    The score board is held into the SCOREBOARD structure 

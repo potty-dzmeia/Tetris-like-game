@@ -1,0 +1,14 @@
+#ifndef SOUNDDEFINITIONS_H
+#define SOUNDDEFINITIONS_H
+
+			
+#define MUSIC_SOUND					0
+#define GAME_OVER_SOUND				1
+#define ROTATE_SOUND				2
+#define DROP_DOWN_SOUND				3
+#define LINE_DELETED_SOUND			4
+#define FOUR_LINES_DELETED_SOUND	5
+#define QUIT_SOUND					6
+#define GAME_START_SOUND			7
+
+#endif
