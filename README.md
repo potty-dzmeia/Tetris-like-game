@@ -1,2 +1,4 @@
-# Tetris-like-game
-Yet another basic clone of Tetris for Windows (uses DirectX for drawing).
+# Open source Tetris 
+
+Open source Tetris like game. Written in C++ in order to learn the language.
+Works on Windows and uses DirectX for drawing and sounds.
